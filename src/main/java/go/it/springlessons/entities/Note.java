@@ -2,11 +2,11 @@ package go.it.springlessons.entities;
 
 public class Note {
     private Long id;
-    private String tittle;
+    private String title;
     private String content;
 
-    public Note(String tittle, String content) {
-        this.tittle = tittle;
+    public Note(String title, String content) {
+        this.title = title;
         this.content = content;
     }
 
@@ -18,12 +18,12 @@ public class Note {
         this.id = id;
     }
 
-    public String getTittle() {
-        return tittle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContent() {
@@ -38,7 +38,7 @@ public class Note {
     public String toString() {
         return "Note{" +
                 "id=" + id +
-                ", tittle='" + tittle + '\'' +
+                ", tittle='" + title + '\'' +
                 ", content='" + content + '\'' +
                 '}';
     }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Note List</title>
+</head>
+<body>
+<h1>Note List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <form th:action="@{/note/delete}" method="post">
+        <tr th:each="note : ${notes}">
+            <td th:text="${note.title}"></td>
+            <td th:text="${note.content}"></td>
+            <td>
+                <a th:href="@{/note/edit(id=${note.id})}">Edit</a>
+                <button type="submit" name="id" th:value="${note.id}">Delete</button>
+            </td>
+        </tr>
+    </form>
+    </tbody>
+</table>
+<a href="/note/edit">Add Note</a>

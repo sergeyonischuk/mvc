@@ -49,7 +49,7 @@ public class NoteService {
         if (!noteList.containsValue(note)) {
             throw new IllegalArgumentException("Note with id " + note.getId() + " does not exist.");
         }
-        noteList.get(note.getId()).setTittle(note.getTittle());
+        noteList.get(note.getId()).setTitle(note.getTitle());
         noteList.get(note.getId()).setContent(note.getContent());
     }
 

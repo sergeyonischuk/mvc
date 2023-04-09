@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class TestControler {
     @GetMapping("/test")
     public String getSomething(Model model) {
-        //model.addAttribute("name", "John");
+        model.addAttribute("name", "John");
 
         return "test";
     }
