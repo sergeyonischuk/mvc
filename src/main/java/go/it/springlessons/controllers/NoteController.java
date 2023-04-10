@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/note")
@@ -35,19 +34,15 @@ public class NoteController {
     }
 
     @GetMapping("/edit")
-    public String editNoteById(@RequestParam("id") Integer id, Model model) {
+    public String editNoteForm(@RequestParam("id") Integer id, Model model) {
         Note note = noteService.getById(id);
-        if (note != null) {
-            model.addAttribute("note", note);
-            return "note/edit";
-        }
-        return "redirect:/note/list";
+        model.addAttribute("note", note);
+        return "edit";
     }
 
     @PostMapping("/edit")
-    public String updateNoteById(@ModelAttribute("note") Note note) {
-        noteService.add(note);
+    public String editNoteSubmit(@ModelAttribute Note note) {
+        noteService.update(note);
         return "redirect:/note/list";
     }
-
 }

@@ -23,6 +23,11 @@ public class NoteService {
         add(note3);
 
         System.out.println("test noteList created with " + noteList.size() + " notes");
+        System.out.println("NOTES ID: ");
+        System.out.println(note.getId());
+        System.out.println(note1.getId());
+        System.out.println(note2.getId());
+        System.out.println(note3.getId());
     }
 
     public List<Note> listAll() {
