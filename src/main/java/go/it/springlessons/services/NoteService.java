@@ -17,10 +17,10 @@ public class NoteService {
         Note note2 = new Note("humanitarians and technicians", "who is cooler?");
         Note note3 = new Note("History for newbies", "Why the Middle ages are not so cool");
 
-        noteList.put(1, note);
-        noteList.put(2, note1);
-        noteList.put(3, note2);
-        noteList.put(4, note3);
+        add(note);
+        add(note1);
+        add(note2);
+        add(note3);
 
         System.out.println("test noteList created with " + noteList.size() + " notes");
     }
