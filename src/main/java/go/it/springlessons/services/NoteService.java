@@ -12,8 +12,8 @@ public class NoteService {
 
     @PostConstruct
     public void addTestNotes(){
-        Note note = new Note("Dragons and fairies", "dragons are big, fairies are small");
-        Note note1 = new Note("Blablabla", "asdasdasd");
+        Note note = new Note("Dragons and fairies", "not boring fantasy");
+        Note note1 = new Note("Blablabla", "blabla");
         Note note2 = new Note("humanitarians and technicians", "who is cooler?");
         Note note3 = new Note("History for newbies", "Why the Middle ages are not so cool");
 
@@ -21,13 +21,6 @@ public class NoteService {
         add(note1);
         add(note2);
         add(note3);
-
-        System.out.println("test noteList created with " + noteList.size() + " notes");
-        System.out.println("NOTES ID: ");
-        System.out.println(note.getId());
-        System.out.println(note1.getId());
-        System.out.println(note2.getId());
-        System.out.println(note3.getId());
     }
 
     public List<Note> listAll() {
