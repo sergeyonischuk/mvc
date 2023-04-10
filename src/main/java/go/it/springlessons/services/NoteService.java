@@ -8,17 +8,19 @@ import java.util.*;
 
 @Service
 public class NoteService {
-    private Map<Long, Note> noteList = new HashMap<>();
+    private Map<Integer, Note> noteList = new HashMap<>();
 
     @PostConstruct
     public void addTestNotes(){
         Note note = new Note("Dragons and fairies", "dragons are big, fairies are small");
         Note note1 = new Note("Blablabla", "asdasdasd");
         Note note2 = new Note("humanitarians and technicians", "who is cooler?");
+        Note note3 = new Note("History for newbies", "Why the Middle ages are not so cool");
 
-        noteList.put(1L, note);
-        noteList.put(2L, note1);
-        noteList.put(3L, note2);
+        noteList.put(1, note);
+        noteList.put(2, note1);
+        noteList.put(3, note2);
+        noteList.put(4, note3);
 
         System.out.println("test noteList created with " + noteList.size() + " notes");
     }
@@ -28,16 +30,16 @@ public class NoteService {
     }
 
     public Note add(Note note) {
-        Long id = new Random().nextLong();
+        Integer id = new Random().nextInt();
         while (noteList.containsKey(id)) {
-            id = new Random().nextLong();
+            id = new Random().nextInt();
         }
         note.setId(id);
         noteList.put(id, note);
         return note;
     }
 
-    public void deleteById(Long id) {
+    public void deleteById(Integer id) {
         if (!noteList.containsKey(id)) {
             throw new IllegalArgumentException("Note with id " + id + " does not exist.");
         }
@@ -53,7 +55,7 @@ public class NoteService {
         noteList.get(note.getId()).setContent(note.getContent());
     }
 
-    public Note getById(Long id) {
+    public Note getById(Integer id) {
         if (!noteList.containsKey(id)) {
             throw new IllegalArgumentException("Note with id " + id + " does not exist.");
         }

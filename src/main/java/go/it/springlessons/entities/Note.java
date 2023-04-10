@@ -1,7 +1,7 @@
 package go.it.springlessons.entities;
 
 public class Note {
-    private Long id;
+    private Integer id;
     private String title;
     private String content;
 
@@ -10,11 +10,11 @@ public class Note {
         this.content = content;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

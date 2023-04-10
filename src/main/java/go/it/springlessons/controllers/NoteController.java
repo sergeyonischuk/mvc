@@ -29,13 +29,13 @@ public class NoteController {
     }
 
     @PostMapping("/delete")
-    public String deleteNoteById(@RequestParam("id") Long id) {
+    public String deleteNoteById(@RequestParam("id") Integer id) {
         noteService.deleteById(id);
         return "redirect:/note/list";
     }
 
     @GetMapping("/edit")
-    public String editNoteById(@RequestParam("id") Long id, Model model) {
+    public String editNoteById(@RequestParam("id") Integer id, Model model) {
         Note note = noteService.getById(id);
         if (note != null) {
             model.addAttribute("note", note);
