@@ -46,11 +46,15 @@ public class NoteService {
     }
 
     public void update(Note note) {
-        if (!noteList.containsValue(note)) {
+        if (!noteList.containsKey(note.getId())) {
             throw new IllegalArgumentException("Note with id " + note.getId() + " does not exist.");
         }
         noteList.get(note.getId()).setTitle(note.getTitle());
         noteList.get(note.getId()).setContent(note.getContent());
+    }
+
+    public void updateByID(Integer id) {
+        update(getById(id));
     }
 
     public Note getById(Integer id) {

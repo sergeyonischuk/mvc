@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -41,7 +42,8 @@ public class NoteController {
     }
 
     @PostMapping("/edit")
-    public String editNoteSubmit(@ModelAttribute Note note) {
+    public String editNoteSubmit(@ModelAttribute Note note, @RequestParam("id") String id) {
+        note.setId(Integer.parseInt(id));
         noteService.update(note);
         return "redirect:/note/list";
     }
