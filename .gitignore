@@ -1,33 +1,27 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
+# IDE files
+.idea/
 .vscode/
+
+# Compiled files
+/bin/
+/target/
+
+# Logs
+/logs/
+
+# Maven build files
+*.jar
+*.war
+*.ear
+*.class
+target/
+
+# Application properties
+/src/main/resources/application.properties
+
+# Thymeleaf cache
+/src/main/resources/templates/cache/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
