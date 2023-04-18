@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">>
 <head>
-    <meta charset="UTF-8">
-    <title>Add Note</title>
+    <title>Add note</title>
 </head>
 <body>
-<h1>Add Note</h1>
-<form method="post" th:action="@{/note/add}">
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" required><br><br>
-    <label for="text">Text:</label>
-    <textarea id="text" name="text" rows="5" required></textarea><br><br>
-    <input type="submit" value="Add Note">
+<h1>Add note</h1>
+<form th:action="@{/note/add}" th:object="${note}" method="POST">
+    <input type="hidden" th:field="*{id}" />
+    <label>Title:</label>
+    <input type="text" th:field="*{title}" /><br/>
+    <label>Content:</label>
+    <input type="text" th:field="*{content}" /><br/>
+    <input type="submit" value="save">
 </form>
 </body>
 </html>
