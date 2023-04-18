@@ -5,7 +5,8 @@ import go.it.springlessons.repositories.NoteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @Service
