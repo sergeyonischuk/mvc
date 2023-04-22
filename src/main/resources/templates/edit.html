@@ -6,11 +6,11 @@
 <body>
 <h1>Edit note</h1>
 <form th:action="@{/note/edit}" th:object="${note}" method="POST">
-    <input type="hidden" th:field="*{id}" />
+    <input type="hidden" th:field="*{id}"/>
     <label>Title:</label>
-    <input type="text" th:field="*{title}" /><br/>
+    <input type="text" th:field="*{title}"/><br/>
     <label>Content:</label>
-    <input type="text" th:field="*{content}" /><br/>
+    <input type="text" th:field="*{content}"/><br/>
     <input type="submit" value="save">
 </form>
 </body>

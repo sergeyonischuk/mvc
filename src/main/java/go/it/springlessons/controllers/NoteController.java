@@ -47,6 +47,12 @@ public class NoteController {
         return "redirect:/note/list";
     }
 
+    @GetMapping("/add")
+    public String addNoteForm(Model model) {
+        model.addAttribute("note", new Note());
+        return "add";
+    }
+
     @PostMapping("/add")
     public String addNote(@ModelAttribute Note note) {
         noteService.add(note);
